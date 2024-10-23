@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Note</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        form { display: flex; flex-direction: column; gap: 10px; }
+        input, textarea { padding: 8px; }
+        button { padding: 10px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        a { color: #2196F3; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>Add New Note</h1>
+    <form action="/notes/new" method="POST">
+        <input type="text" name="title" placeholder="Title" required />
+        <textarea name="content" placeholder="Content" rows="4" required></textarea>
+        <button type="submit">Add Note</button>
+    </form>
+    <p><a href="/notes">Back to All Notes</a></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .notes { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .note { background: #fff3cd; padding: 15px; border-radius: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+        .note h2 { margin-top: 0; font-size: 1.2em; }
+        .add-button { display: inline-block; padding: 10px 20px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 20px; }
+        .date { font-size: 0.8em; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>My Notes</h1>
+    <a href="/notes/new" class="add-button">Add New Note</a>
+    
+    <div class="notes">
+        <% notes.forEach(note => { %>
+            <div class="note">
+                <h2><%= note.title %></h2>
+                <p><%= note.content %></p>
+                <p class="date"><%= note.createdAt.toLocaleDateString() %></p>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
